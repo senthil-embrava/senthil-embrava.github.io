@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<button onclick="myFunction()">Click me</button>
+
+		<script>
+            function myFunction() {
+                console.log('Clicked');
+                navigator.usb.getDevices()
+                  .then(devices => {
+                    devices.map(device => {
+                      console.log('Device:');
+                      console.log(device.productName);
+                      console.log(device.manufacturerName);
+                    });
+                  });
+            }
+        </script>
+ 
 </body>
 </html>
