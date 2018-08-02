@@ -6,21 +6,26 @@
 
 		<script>
             let button = document.getElementById('request-device');
-button.addEventListener('click', async () => {
-  let device;
-  try {
-    device = await navigator.usb.requestDevice({ filters: [{
-        vendorId: 0x2C0D,
-        productId: 0x000A
-    }]});
-  } catch {
-    // No device was selected.
-  }
 
-  if (device !== undefined) {
-    // Add |device| to the UI.
-  }
-});
+			if(button)
+			{
+				button.addEventListener('click', async () => {
+				  let device;
+				  try {
+					device = await navigator.usb.requestDevice({ filters: [{
+						vendorId: 0x2C0D,
+						productId: 0x000A
+					}]});
+				  } catch {
+					// No device was selected.
+				  }
+
+				  if (device !== undefined) {
+					// Add |device| to the UI.
+				  }
+			});
+			}
+
         </script>
  
 </body>
