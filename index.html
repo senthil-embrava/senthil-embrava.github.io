@@ -7,19 +7,14 @@
 		<script>
             function myFunction() {
                 console.log('Clicked');
-                let device;
-				  try {
-					device = await navigator.usb.requestDevice({ filters: [{
-						vendorId: 0x2C0D,
-						productId: 0x000A // vendor-specific
-					}]});
-				  } catch () {
-					// No device was selected.
-				  }
-
-				  if (device !== undefined) {
-					// Add |device| to the UI.
-				  }
+                navigator.usb.getDevices()
+                  .then(devices => {
+                    devices.map(device => {
+                      console.log('Device:');
+                      console.log(device.productName);
+                      console.log(device.manufacturerName);
+                    });
+                  });
             }
         </script>
  
