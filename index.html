@@ -10,8 +10,8 @@
                 let device;
 				  try {
 					device = await navigator.usb.requestDevice({ filters: [{
-						vendorId: 0x2C0D,
-						productId: 0x000A
+						vendorId: 0x090C,
+						productId: 0x1000
 					}]});
 				  } catch {
 					// No device was selected.
