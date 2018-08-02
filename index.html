@@ -2,25 +2,26 @@
 <html>
 <body>
 
-<button onclick="myFunction()">Click me</button>
+<button onclick="myFunction()">request-device</button>
 
 		<script>
-            async function myFunction() {
-                console.log('Clicked');
-                let device;
-				  try {
-					device = await navigator.usb.requestDevice({ filters: [{
-						vendorId: 0x2C0D,
-						productId: 0x000A
-					}]});
-				  } catch {
-					// No device was selected.
-				  }
+            let button = document.getElementById('request-device');
+button.addEventListener('click', async () => {
+  let device;
+  try {
+    device = await navigator.usb.requestDevice({ filters: [{
+        vendorId: 0xABCD,
+        classCode: 0xFF, // vendor-specific
+        protocolCode: 0x01
+    }]});
+  } catch () {
+    // No device was selected.
+  }
 
-				  if (device !== undefined) {
-					// Add |device| to the UI.
-				  }
-            }
+  if (device !== undefined) {
+    // Add |device| to the UI.
+  }
+});
         </script>
  
 </body>
