@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Embrava-Chrome WebUSB SDK</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="main-ui.js"></script>	
+
+        <style>
+            
+        </style>
+	</head>
+	
+
+<body>
+	   
+    <div class="container">
+        <div id="addDevicePanel">
+            <fieldset style="width:520px">
+                <legend>Add Device</legend>
+                <label>Add the Embrava devices to use with this Application</label>
+                <button id="buttonAddDevice" style="width:95px;">Add Device</button>
+            </fieldset>
+        </div>
+
+        <div></div>
+
+        <div id="devicePanel">
+            <fieldset style="width:520px">
+                <legend>Select Device:</legend>
+                <select id="deviceSelector" style="width:510px;"></select>
+
+            </fieldset>
+        </div>
+
+        <div></div>
+
+        <table>
+
+
+            <div id="lightControl2">
+                <fieldset style="width:520px;">
+                    <legend>Controls (Embrava v3/v4 Devices):</legend>
+
+                    <div>
+                    </div>
+
+                    <input type="checkbox" name="displayLight" id="displayLight"><label for="displayLight">Display Light</label>
+
+                    <div>
+                    </div>
+
+                    <div>
+                        <label for="redValue">Red</label>
+                        <input id="redValue" name="redValue" value="255" size="3">
+                        <span1></span1>
+                        <label for="greenValue">Green</label>
+                        <input id="greenValue" name="greenValue" value="255" size="3">
+                        <span1></span1>
+                        <label for="blueValue">Blue</label>
+                        <input id="blueValue" name="blueValue" value="255" size="3">
+                        <span1></span1>
+
+
+                        <button id="buttonSetLight" style="width:84px;">Set</button>
+                    </div>
+
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+
+                    <input type="checkbox" name="dimLight" id="dimLight"><label for="dimLight">Dim Light</label>
+                    <span2></span2>
+                    <span2></span2>
+                    <input type="checkbox" name="flashLight" id="flashLight"><label for="flashLight">Flash Light</label>
+                    <span2></span2>
+                    <span2></span2>
+                    <label>Select Speed</label>
+                    <select name="flashSpeedSelector" id="flashSpeedSelector" style="width:84px;"></select>
+
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
+
+                    <input type="checkbox" name="playMusic" id="playMusic"><label for="playMusic">Play Music</label>
+
+                    <div>
+                    </div>
+                    <span3></span3>
+
+                    <label>Music</label>
+                    <select name="musicSelector" id="musicSelector" style="width:172px;"></select>
+                    <span2></span2>
+                    <span2></span2>
+                    <label>Volume</label>
+
+                    <input type="range" name="volumeRange" id="volumeRange" min="1" max="10" step="1" style="width:156px;" />
+
+                    <div>
+                    </div>
+
+                    <input type="checkbox" name="repeatMusic" id="repeatMusic"><label for="repeatMusic">Repeat Music</label>
+                    <div>
+                    </div>
+                </fieldset>
+            </div>
+
+        </table>
+
+    </div>
+
+</body>
+  
+</html>
