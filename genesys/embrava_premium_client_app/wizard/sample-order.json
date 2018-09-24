@@ -42,7 +42,7 @@
             "name": "Supervisor Widget",
             "url": "https://senthil-embrava.github.io/genesys/embrava_premium_client_app/supervisor.html?lang={{pcLangTag}}&environment={{pcEnvironment}}",
             "type": "standalone",
-            "groups": ["Supervisors"]
+            "groups": ["Agents", "Supervisors"]
         }
     ]
 }
