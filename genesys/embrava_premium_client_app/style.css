@@ -4,19 +4,12 @@
 *       Found at: https://developer.mypurecloud.com/partners/
 */
 
-body {
-    color: #0F465D;
-    font-family: “HelveticaNeue”, “Helvetica”, “Arial”, sans-serif;
-    font-size: 14px;
-}
 
-.align-center {
-    display: block;
-    margin: 1.0em auto;
-    text-align: center;
-}
-
-.responsive {
-    width: 100%;
-    height: auto;
+img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+    max-height: 100%;
 }
