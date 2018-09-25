@@ -83,7 +83,7 @@ function sleep(milliseconds) {
     }
 }
 
-sendAccessTokenAsHeartBeat = function() {
+function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
 };
 
