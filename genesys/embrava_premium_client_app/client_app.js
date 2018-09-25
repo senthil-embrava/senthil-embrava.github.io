@@ -40,11 +40,11 @@ clientApp.setup = function(pcEnv, langTag, html){
         clientApp.channelID = data.id;
         clientApp.socket = new WebSocket(clientApp.websocketUri);
         clientApp.socket.onmessage = clientApp.onSocketMessage;
-        clientApp.topicIdAgent = "v2.users." + clientApp.userId + ".presence";
+        //clientApp.topicIdAgent = "v2.users." + clientApp.userId + ".presence";
 
         // Subscribe to Call Conversations of Current user.
-        let topic = [{"id": clientApp.topicIdAgent}];
-        return notificationsApi.postNotificationsChannelSubscriptions(clientApp.channelID, topic);
+        //let topic = [{"id": clientApp.topicIdAgent}];
+        //return notificationsApi.postNotificationsChannelSubscriptions(clientApp.channelID, topic);
     }).then(
         $.getJSON('./language.json', function(data) {
             clientApp.language = data;
@@ -68,9 +68,5 @@ clientApp.onSocketMessage = function(event){
     console.log(topic);
     console.log(eventBody);    
 };
-
-
-
-
 
 export default clientApp
