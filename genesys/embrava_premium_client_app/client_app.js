@@ -17,6 +17,8 @@ const notificationsApi = new platformClient.NotificationsApi();
 const analyticsApi = new platformClient.AnalyticsApi();
 const routingApi = new platformClient.RoutingApi();
 
+var accessToken = null;
+
 // Will Authenticate through PureCloud and subscribe to User Conversation Notifications
 clientApp.setup = function(pcEnv, langTag, html){
     let clientId = clientIDs[pcEnv] || clientIDs['mypurecloud.com'];
@@ -28,6 +30,10 @@ clientApp.setup = function(pcEnv, langTag, html){
     .then(data => {
         console.log(data);
         
+        if (data != null) {
+            accessToken = data.accessToken;
+            var appActiveSignalInterval = setInterval(sendAccessTokenAsHeartBeat, 5000);
+        }
         // Get Details of current User and save to Client App
         return usersApi.getUsersMe();
     }).then( userMe => {
@@ -40,23 +46,12 @@ clientApp.setup = function(pcEnv, langTag, html){
         clientApp.channelID = data.id;
         clientApp.socket = new WebSocket(clientApp.websocketUri);
         clientApp.socket.onmessage = clientApp.onSocketMessage;
-        //clientApp.topicIdAgent = "v2.users." + clientApp.userId + ".presence";
-
-        // Subscribe to Call Conversations of Current user.
-        //let topic = [{"id": clientApp.topicIdAgent}];
-        //return notificationsApi.postNotificationsChannelSubscriptions(clientApp.channelID, topic);
     }).then(
-        $.getJSON('./language.json', function(data) {
-            clientApp.language = data;
-        })
-    ).then(
         data => console.log("Succesfully set-up Client App.")
     )
 
     // Error Handling
     .catch(e => console.log(e));
-
-
 };
 
 // Handler for every Websocket message
@@ -67,6 +62,29 @@ clientApp.onSocketMessage = function(event){
 
     console.log(topic);
     console.log(eventBody);    
+};
+
+window.onbeforeunload = function () {		
+    
+    return;
+}; 
+
+window.onunload = function () {
+    
+    return;
+};
+	
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+            break;
+        }
+    }
+}
+
+sendAccessTokenAsHeartBeat = function() {
+    console.log("Access Token:" + accessToken);
 };
 
 export default clientApp
