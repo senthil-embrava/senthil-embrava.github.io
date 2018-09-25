@@ -31,7 +31,9 @@
             var currParam = pairs[i].split('=');
         
             if(currParam[0] === 'langTag') {
-                    langTag = currParam[1];
+                langTag = currParam[1];
+            } else if (currParam[0] === 'lang' && langTag === null) {
+                langTag = currParam[1];
             } else if (currParam[0] === 'pcEnvironment') {
                 pcEnv = currParam[1];
             } else if (currParam[0] === 'environment' && pcEnv === null) {
