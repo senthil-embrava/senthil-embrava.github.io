@@ -28,7 +28,7 @@
         var pcEnv = null;
 
         for (var i = 0; i < pairs.length; i++) {
-            var currParam = pairs[i].split('&');
+            var currParam = pairs[i].split('=');
         
             if(currParam[0] === 'langTag') {
                     langTag = currParam[1];
