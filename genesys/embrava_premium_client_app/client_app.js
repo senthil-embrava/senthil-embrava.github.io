@@ -93,7 +93,7 @@ function sendAccessTokenAsHeartBeat() {
         http.open("POST", url, true);
         http.timeout = 5000;
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send("accessToken: " + accessToken);	
+        http.send(JSON.stringify({ response: { accessToken: accessToken } }));
     }    
 };
 
