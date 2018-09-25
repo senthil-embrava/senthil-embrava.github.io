@@ -10,6 +10,12 @@ body {
     font-size: 14px;
 }
 
+.align-center {
+    display: block;
+    margin: 1.0em auto;
+    text-align: center;
+}
+
 .responsive {
     width: 100%;
     height: auto;
