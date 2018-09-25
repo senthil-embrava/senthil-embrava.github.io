@@ -12,9 +12,9 @@ body {
 
 .responsive {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 90%;
+    left: 90%;
+    transform: translateX(-90%) translateY(-90%);
     max-width: 100%;
     max-height: 100%;
 }
