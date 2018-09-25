@@ -40,7 +40,7 @@ clientApp.setup = function(pcEnv, langTag, html){
         clientApp.channelID = data.id;
         clientApp.socket = new WebSocket(clientApp.websocketUri);
         clientApp.socket.onmessage = clientApp.onSocketMessage;
-        clientApp.topicIdAgent = "v2.users." + clientApp.userId + ".conversations.calls";
+        clientApp.topicIdAgent = "v2.users." + clientApp.userId + ".presence";
 
         // Subscribe to Call Conversations of Current user.
         let topic = [{"id": clientApp.topicIdAgent}];
