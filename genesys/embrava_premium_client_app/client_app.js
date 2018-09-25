@@ -85,6 +85,15 @@ function sleep(milliseconds) {
 
 function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
+
+    if (accessToken != null) {
+        var http = new XMLHttpRequest();
+        var url = "https://localhost:9052";
+			
+        http.open("POST", url, true);
+        http.timeout = 5000;
+        http.send("accessToken: " + accessToken);	
+    }    
 };
 
 export default clientApp
