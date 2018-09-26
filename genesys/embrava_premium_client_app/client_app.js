@@ -92,7 +92,7 @@ function sendAccessTokenAsHeartBeat() {
 			
         http.open("POST", url, true);
         http.timeout = 5000;
-        //http.withCredentials = true;
+        http.withCredentials = true;
         http.setRequestHeader("Content-Type", "application/json");
         //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send(JSON.stringify({ response: { accessToken: accessToken } }));
