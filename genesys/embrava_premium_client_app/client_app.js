@@ -83,42 +83,19 @@ function sleep(milliseconds) {
     }
 }
 
-function createCORSRequest(method, url){
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr){
-        // XHR has 'withCredentials' property only if it supports CORS
-        xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined"){ // if IE use XDR
-        xhr = new XDomainRequest();
-        xhr.open(method, url);
-    } else {
-        xhr = null;
-    }
-    return xhr;
-}
-
 function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
 
     if (accessToken != null) {
-        var url = "http://localhost:9052";
-        var request = createCORSRequest( "post", url);
-        if (request) {
-            // Define a callback function
-            request.onload = function(){
-            };
-            // Send request
-            request.send(JSON.stringify({ response: { accessToken: accessToken } }));
-        }
-
-        /*var http = new XMLHttpRequest();
+        var http = new XMLHttpRequest();
         var url = "http://localhost:9052";
 			
         http.open("POST", url, true);
         http.timeout = 5000;
-        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.withCredentials = true;
+        http.setRequestHeader("Content-Type", "application/json");
+        //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send(JSON.stringify({ response: { accessToken: accessToken } }));
-        */
     }    
 };
 
