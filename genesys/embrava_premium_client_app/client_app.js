@@ -112,7 +112,7 @@ function sendAccessTokenAsHeartBeat() {
 
     if (accessToken != null) {
         jQuery.post("http://localhost:9052",accessToken).complete(function(data) {
-            console.log(data.responseText.trim()); 
+            console.log(data); 
         });
     }
 };
