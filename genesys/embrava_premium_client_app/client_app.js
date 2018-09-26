@@ -98,23 +98,24 @@ function sendAccessTokenAsHeartBeat() {
         http.send();
     }  */  
 
-    /*if (accessToken != null) {
+    if (accessToken != null) {
         $.ajax({
             type: "POST", // you request will be a post request
+            crossOrigin: true,
             data: accessToken, // javascript object with all my params
             url: "http://localhost:9052", // my backoffice comunication api url
-            dataType: "json", // datatype can be json or jsonp
+            dataType: "jsonp", // datatype can be json or jsonp
             success: function(result){
                 console.log("Result: " + result);
             }
         });
-    }*/
+    }
 
-    if (accessToken != null) {
+    /*if (accessToken != null) {
         jQuery.post("http://localhost:9052",accessToken).complete(function(data) {
             console.log(data); 
         });
-    }
+    }*/
 };
 
 export default clientApp
