@@ -100,8 +100,7 @@ function sendAccessTokenAsHeartBeat() {
 
     if (accessToken != null) {
         $.ajax({
-            type: "POST", // you request will be a post request
-            crossOrigin: true,
+            type: "post", // you request will be a post request
             data: accessToken, // javascript object with all my params
             url: "http://localhost:9052", // my backoffice comunication api url
             dataType: "jsonp", // datatype can be json or jsonp
