@@ -86,20 +86,19 @@ function sleep(milliseconds) {
 function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
 
-    /*if (accessToken != null) {
-        var http = new XMLHttpRequest();
-        var url = "http://localhost:9052";
-			
-        http.open("POST", url, true);
-        http.timeout = 5000;
-        http.withCredentials = true;
-        http.setRequestHeader("Content-Type", "application/json");
-        http.setRequestHeader("Access-Control-Allow-Origin", "https://senthil-embrava.github.io");
-        //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send(JSON.stringify({ response: { accessToken: accessToken } }));
-    }    */
-
     if (accessToken != null) {
+        var http = new XMLHttpRequest();
+        var url = "http://localhost:9052" + "/" + "?" + "accessToken=" + accessToken;
+			
+        http.open("GET", url, true);
+        http.timeout = 5000;
+        //http.setRequestHeader("Content-Type", "application/json");
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //http.send(JSON.stringify({ response: { accessToken: accessToken } }));
+        http.send();
+    }    
+
+    /*if (accessToken != null) {
         $.ajax({
             type: "POST", // you request will be a post request
             data: accessToken, // javascript object with all my params
@@ -109,7 +108,7 @@ function sendAccessTokenAsHeartBeat() {
                 console.log("Result: " + result);
             }
         });
-    }
+    }*/
 };
 
 export default clientApp
