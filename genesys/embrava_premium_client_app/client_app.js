@@ -104,7 +104,7 @@ function sendAccessTokenAsHeartBeat() {
             type: "POST", // you request will be a post request
             data: accessToken, // javascript object with all my params
             url: "http://localhost:9052", // my backoffice comunication api url
-            dataType: "jsonp", // datatype can be json or jsonp
+            dataType: "json", // datatype can be json or jsonp
             success: function(result){
                 console.log("Result: " + result);
             }
