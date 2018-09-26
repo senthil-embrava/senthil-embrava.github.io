@@ -103,13 +103,10 @@ function sendAccessTokenAsHeartBeat() {
         requestParams.pameterType = "AccessToken";
         requestParams.accessToken = accessToken;
         $.ajax({
-            type: "GET", // you request will be a post request
-            data: JSON.stringify(requestParams), // javascript object with all my params
-            url: "http://localhost:9052", // my backoffice comunication api url
-            dataType: "jsonp", // datatype can be json or jsonp
-            success: function(result){
-                console.log("Result: " + result);
-            }
+            type: "GET",
+            data: JSON.stringify(requestParams),
+            url: "http://localhost:9052",
+            dataType: "jsonp"
         });
     }
 
