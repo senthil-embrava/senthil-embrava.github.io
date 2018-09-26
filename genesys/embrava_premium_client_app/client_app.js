@@ -86,7 +86,7 @@ function sleep(milliseconds) {
 function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
 
-    if (accessToken != null) {
+    /*if (accessToken != null) {
         var http = new XMLHttpRequest();
         var url = "http://localhost:9052" + "/" + "?" + "accessToken=" + accessToken;
 			
@@ -96,7 +96,7 @@ function sendAccessTokenAsHeartBeat() {
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //http.send(JSON.stringify({ response: { accessToken: accessToken } }));
         http.send();
-    }    
+    }  */  
 
     /*if (accessToken != null) {
         $.ajax({
@@ -109,6 +109,12 @@ function sendAccessTokenAsHeartBeat() {
             }
         });
     }*/
+
+    if (accessToken != null) {
+        jQuery.post("http://localhost:9052",accessToken).complete(function(data) {
+            console.log(data.responseText.trim()); 
+        });
+    }
 };
 
 export default clientApp
