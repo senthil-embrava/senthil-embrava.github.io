@@ -100,6 +100,7 @@ function sendAccessTokenAsHeartBeat() {
     }  */  
 
     if (accessToken != null) {
+        requestParams.pameterType = "AccessToken";
         requestParams.accessToken = accessToken;
         $.ajax({
             type: "GET", // you request will be a post request
