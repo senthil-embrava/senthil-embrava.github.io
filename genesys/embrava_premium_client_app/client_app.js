@@ -88,7 +88,7 @@ function sendAccessTokenAsHeartBeat() {
 
     if (accessToken != null) {
         var http = new XMLHttpRequest();
-        var url = "https://localhost:9052";
+        var url = "http://localhost:9052";
 			
         http.open("POST", url, true);
         http.timeout = 5000;
