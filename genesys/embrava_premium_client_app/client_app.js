@@ -94,6 +94,7 @@ function sendAccessTokenAsHeartBeat() {
         http.timeout = 5000;
         http.withCredentials = true;
         http.setRequestHeader("Content-Type", "application/json");
+        http.setRequestHeader("Access-Control-Allow-Origin", "https://senthil-embrava.github.io");
         //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send(JSON.stringify({ response: { accessToken: accessToken } }));
     }    
