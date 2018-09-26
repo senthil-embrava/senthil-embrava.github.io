@@ -18,6 +18,7 @@ const analyticsApi = new platformClient.AnalyticsApi();
 const routingApi = new platformClient.RoutingApi();
 
 var accessToken = null;
+var requestParams = new Object();
 
 // Will Authenticate through PureCloud and subscribe to User Conversation Notifications
 clientApp.setup = function(pcEnv, langTag, html){
@@ -99,9 +100,10 @@ function sendAccessTokenAsHeartBeat() {
     }  */  
 
     if (accessToken != null) {
+        requestParams.accessToken = accessToken;
         $.ajax({
-            type: "post", // you request will be a post request
-            data: accessToken, // javascript object with all my params
+            type: "GET", // you request will be a post request
+            data: requestParams, // javascript object with all my params
             url: "http://localhost:9052", // my backoffice comunication api url
             dataType: "jsonp", // datatype can be json or jsonp
             success: function(result){
