@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
     </noscript>
 
     <header>
-        <p>Premium App /&nbsp; Install</p>
+        <p>Status Lights for PureCloud /&nbsp; Install</p>
     </header>
     <!-- 
     <div id="loading" style="margin-top: 30px; text-align: center;">
@@ -51,8 +51,10 @@
     </ul>
 
     <main>
+        
+        <span class="txt-install-summary">These are the steps that will be automatically performed for you!</span>
+        
         <p>
-            <span class="txt-install-summary">These are the steps that will be automatically performed for you!</span> 
         </p>
 
         <div class="message">
@@ -64,7 +66,7 @@
                     <span class="txt-create-role-msg">
                         Create a role specifically to provide access to the app.
                     </span>
-                </div> 
+                </div>
             </div>
         </div>
 
@@ -76,8 +78,8 @@
                 <div>
                     <span class="txt-create-group-msg">
                         Groups will provide filtering to users' access to the app instances.
-                    </span> 
-                </div> 
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -90,21 +92,22 @@
             <div class="message-content">
                 <div>
                     <span class="txt-create-instance-msg">
-                        More instances of the app will be created with different URI endpoints to provide different features of the app.
+                        An instance of the app will be created to provide the required features of the app.
                     </span>
-                </div> 
+                </div>
             </div>
         </div>
 
         <p class="sink-more">
             <span class="txt-please-click">
-                Please click the button to start the installation.
-            </span>
-        </p>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Please click the button to start the installation.
+            </span>    
+            
+            <button id="start" class="btn-info right">
+                <span class="txt-start">Start</span> <i class="button-icon fas fa-chevron-right"></i>
+            </button>         
+        </p>            
 
-        <button id="start" class="btn-info right">
-            <span class="txt-start">Start</span> <i class="button-icon fas fa-chevron-right"></i>
-        </button>
     </main>
 
     <footer>

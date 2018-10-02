@@ -2,6 +2,10 @@
  * Bubble canvas to emulate the banner @ https://appfoundry.genesys.com/
  */
 
+/*
+* We use the AppFoundry bubble canvas during installation
+*/
+
 (function(){
     
 $(document).ready(() =>{

@@ -38,7 +38,7 @@ footer {
     padding-top: 10px;
     border-top: 2px solid #DDDDDD;
     background: #FFF;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     height: 50px;
@@ -52,7 +52,7 @@ footer {
 
 main {
     margin: auto;
-    padding: 40px 15px 40px 15px;
+    padding: 20px 15px 20px 15px;
     margin-top: 20px;
     width: 70%;
     min-width: 800px;
@@ -69,7 +69,6 @@ main {
 p {
     margin: 12px;
 }
-
 
 .success {
     color: #0baf4a;
@@ -90,7 +89,7 @@ p {
 }
 
 .sink-more {
-    margin-top:40px;
+    margin-top:25px;
 }
 
 /* Buttons */
@@ -137,7 +136,7 @@ button {
     width: 950px;
     height: 60px;
     margin: auto; 
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .progress-bar li {

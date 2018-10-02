@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Premium App Wizard</title>
+    <title>Status Lights for PureCloud Wizard</title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' async type='text/css'>
     <link rel="stylesheet" href="./style.css">
@@ -25,7 +25,7 @@
     </noscript>
 
     <header>
-        <p>Premium App /&nbsp; Home</p>
+        <p>Status Lights for PureCloud /&nbsp; Home</p>
     </header>
 
     <div id="loading" style="margin-top: 30px; text-align: center;">
@@ -38,7 +38,7 @@
         </span>
         <span id="username"></span>!
         <div class="txt-greeting-2">
-            welcome to the Premium App Example
+            Welcome to the installation of Status Lights For PureCloud.
         </div>
     </div>
 
@@ -72,7 +72,7 @@
             </p>
             <p>
                 <span class="txt-not-available-message">
-                We're sorry but your PureCloud org does not have the Premium App Sample Product enabled.
+                We're sorry but your PureCloud org does not have the Status Lights For PureCloud Product enabled.
                 Please contact the authorities.
                 </span>
             </p>
@@ -107,7 +107,7 @@
         return myApp.isExisting(); 
         }).then((exists) => {
             if(exists){
-                goToPage('../supervisor');
+                goToPage('../index');
             }else{
                 // Get the user information to display on the screen
                 return myApp.getUserDetails(); 

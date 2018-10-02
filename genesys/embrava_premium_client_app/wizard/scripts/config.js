@@ -1,17 +1,15 @@
 export default {
     clientIDs: {
-        //'mypurecloud.com': '8c821827-57bd-4d44-8765-597d4a3220c5',
-        'mypurecloud.com': '26255f2c-6a85-43bf-8d27-7761057bc72d',
-        'mypurecloud.ie': '939ab4dd-109f-4120-ba9f-051b973b9ecc',
-        'mypurecloud.com.au': 'c8a4d721-3fbb-4f50-b3e0-aa49bf86ac87',
-        'mypurecloud.jp': '28dbeebd-8128-4fe0-8f42-f2eebb767a71'
+        //'mypurecloud.com': 'e93d91c6-481d-4238-835d-566c425aab46',
+		'mypurecloud.com': '0b4127c4-6bd7-47a2-b9a2-e0fe274da287',
+        'mypurecloud.ie': '41c93e94-ba9e-4c5e-bf9a-f9ee0b043420',
+        'mypurecloud.com.au': 'd08762cb-d5fd-4447-88ae-c138a374ce31'
     },
-    "redirectUri": "https://mypurecloud.github.io/purecloud-premium-app/wizard/index.html",
-    //"redirectUri": "https://localhost/wizard/index.html",
-
+    "redirectUri": "https://senthil-embrava.github.io/genesys/embrava_premium_client_app/wizard/index.html",
+    
     //Permissions required for running the Wizard App
     "setupPermissionsRequired": ['admin'],
 
     // To be added to names of PureCloud objects created by the wizard
-    "prefix": "PREMIUM_EXAMPLE_",
+    "prefix": "STATUS_LIGHTS_FOR_PURECLOUD_",
 }
