@@ -14,7 +14,16 @@
 
 <script>
 function myFunction() {
-  alert("Hello! I am an alert box!!");
+    var file = window.open("file://C:/Program Files (x86)/Embrava/Embrava Connect/EmbravaConnect.exe");
+   try {
+    setTimeout('file.close()', 100);
+    setTimeout("alert('Embrava Connect found!');", 101);
+  } catch(err) {
+    var wantstodl=confirm("Warning:\n the file, Embrava Connect is not found.\n do you want to download it?\n "+err.message);
+    if (wantstodl) {
+      window.open(""); //downloads the Embrava Connect installer file
+    }
+  }
 }
 </script>
 
