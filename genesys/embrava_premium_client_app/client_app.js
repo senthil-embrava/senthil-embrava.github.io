@@ -19,6 +19,8 @@ const routingApi = new platformClient.RoutingApi();
 
 var accessToken = null;
 var requestParams = new Object();
+var basePath = null;
+var environment = null;
 
 // Will Authenticate through PureCloud and subscribe to User Conversation Notifications
 clientApp.setup = function(pcEnv, langTag, html){
@@ -33,6 +35,8 @@ clientApp.setup = function(pcEnv, langTag, html){
         
         if (data != null) {
             accessToken = data.accessToken;
+			basePath = client.basePath;
+			environment = client.environment;
             var appActiveSignalInterval = setInterval(sendAccessTokenAsHeartBeat, 5000);
         }
         // Get Details of current User and save to Client App
@@ -87,21 +91,17 @@ function sleep(milliseconds) {
 function sendAccessTokenAsHeartBeat() {
     console.log("Access Token:" + accessToken);
 
-    /*if (accessToken != null) {
-        var http = new XMLHttpRequest();
-        var url = "http://localhost:9052" + "/" + "?" + "accessToken=" + accessToken;
-			
-        http.open("GET", url, true);
-        http.timeout = 5000;
-        //http.setRequestHeader("Content-Type", "application/json");
-        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        //http.send(JSON.stringify({ response: { accessToken: accessToken } }));
-        http.send();
-    }  */  
-
     if (accessToken != null) {
         requestParams.parameter1_Type = "AccessToken";
         requestParams.parameter1 = accessToken;
+		
+		requestParams.parameter2_Type = "ApiBaseUrl";
+        requestParams.parameter2 = basePath;
+		
+		requestParams.parameter3_Type = "Environment";
+        requestParams.parameter3 = environment;
+		
+		requestParams
         $.ajax({
             type: "GET",
             data: JSON.stringify(requestParams),
